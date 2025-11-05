@@ -13,7 +13,7 @@ type Drink struct {
 }
 
 type DrinkShort struct {
-	gorm.Model
-	Name string
-	Price int
+	ID    int    `json:"id"`
+	Name  string `json:"name"`
+	Price int    `json:"price"`
 }

@@ -11,7 +11,7 @@ import (
 func GetAllDrinks(c *gin.Context) {
 	var drinks []models.DrinkShort
 	if err := config.DB.Model(&models.Drink{}).Select("id", "name", "price").Find(&drinks).Error; err != nil {
-		c.JSON(500, gin.H{"ошибка": err.Error()})
+		c.JSON(500, gin.H{"error": err.Error()})
 		return
 	}
 	c.JSON(200, drinks)
@@ -22,7 +22,7 @@ func GetDrinkByID(c *gin.Context) {
 	id := c.Param("id")
 
 	if err := config.DB.First(&drink, id).Error; err != nil {
-		c.JSON(404, gin.H{"ошибка": "Напиток не найден"})
+		c.JSON(404, gin.H{"error": "Напиток не найден"})
 		return
 	}
 	c.JSON(200, drink)
@@ -32,7 +32,7 @@ func GetDrinksInStock(c *gin.Context) {
 	var drinks []models.Drink
 
 	if err := config.DB.Where("in_stock = ?", true).Find(&drinks).Error; err != nil {
-		c.JSON(500, gin.H{"ошибка": err.Error()})
+		c.JSON(500, gin.H{"error": err.Error()})
 		return
 	}
 	c.JSON(200, drinks)

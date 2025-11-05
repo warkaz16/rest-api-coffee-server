@@ -2,16 +2,12 @@ package main
 
 import (
 	"rest-api-coffee-server/config"
-
-	"github.com/gin-gonic/gin"
+	"rest-api-coffee-server/models"
+	"rest-api-coffee-server/routers"
 )
 
-func main()  {
+func main() {
 	config.ConnectDB()
-
-	router := gin.Default()
-
-	
-
-	router.Run()
+	config.DB.AutoMigrate(&models.Drink{})
+	routers.CallRouters()
 }

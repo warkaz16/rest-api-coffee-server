@@ -1,0 +1,32 @@
+{
+    "name": "Espresso",
+    "price": 300,
+    "in_stock": true,
+    "contains_caffeine": true,
+    "volume": 60,
+    "description": "A strong and bold coffee shot."
+},
+{
+    "name": "Latte",
+    "price": 450,
+    "in_stock": true,
+    "contains_caffeine": true,
+    "volume": 240,
+    "description": "A creamy coffee drink with steamed milk."
+},
+{
+    "name": "Cappuccino",
+    "price": 400,
+    "in_stock": false,
+    "contains_caffeine": true,
+    "volume": 180,
+    "description": "A coffee drink topped with foamed milk."
+},
+{
+    "name": "Decaf Coffee",
+    "price": 350,
+    "in_stock": true,
+    "contains_caffeine": false,
+    "volume": 200,
+    "description": "A coffee option without caffeine."
+}

@@ -5,7 +5,7 @@
     "contains_caffeine": true,
     "volume": 60,
     "description": "A strong and bold coffee shot."
-},
+}
 {
     "name": "Latte",
     "price": 450,
@@ -13,7 +13,7 @@
     "contains_caffeine": true,
     "volume": 240,
     "description": "A creamy coffee drink with steamed milk."
-},
+}
 {
     "name": "Cappuccino",
     "price": 400,
@@ -21,7 +21,7 @@
     "contains_caffeine": true,
     "volume": 180,
     "description": "A coffee drink topped with foamed milk."
-},
+}
 {
     "name": "Decaf Coffee",
     "price": 350,

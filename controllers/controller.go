@@ -74,9 +74,12 @@ func PatchDrink(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err})
 		return
 	}
+	config.DB.Model(&drink).Updates(input)
+
 	drink.InStock = input.InStock
 	drink.ContainsCaffeine = input.ContainsCaffeine
 	drink.Volume = input.Volume
 	config.DB.Save(&drink)
+	
 	c.JSON(200, drink)
 }

@@ -3,18 +3,20 @@ package config
 import (
 	"log"
 
-	"gorm.io/driver/sqlite"
+	"gorm.io/driver/postgres"
+
 	"gorm.io/gorm"
 )
 
 var DB *gorm.DB
 
 func ConnectDB() {
-	database, err := gorm.Open(sqlite.Open("coffee.db"), &gorm.Config{})
+	dsn := "host=localhost user=adamgowz password=9555 dbname=postgres port=5432 sslmode=disable"
+	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 
 	if err != nil {
 		log.Fatal("не удается подключиться к базе данных")
 	}
-	DB = database
+	DB = db
 	log.Println("Установлено подключение к базе данных")
 }
